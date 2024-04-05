@@ -1,0 +1,12 @@
+services:
+  svelte:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: biocollate-website
+    container_name: biocollate-website-dev
+    restart: unless-stopped
+    ports:
+      - "5000:80"
+    volumes:
+      - .:/app
